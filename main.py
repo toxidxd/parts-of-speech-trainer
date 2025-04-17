@@ -18,11 +18,8 @@ def gen_tasks_list(count):
 
     return [words_list[i_index] for i_index in indexes]
 
-
-def main():
-    wrong = 0
-    print('Привет!')
-    tasks_count = int(input('Введи количество заданий: '))
+def testing(tasks_count):
+    mistakes = 0
     tasks = gen_tasks_list(tasks_count)
 
     for word in tasks:
@@ -35,7 +32,7 @@ def main():
                 break
             else:
                 print('Не верно!')
-                wrong += 1
+                mistakes += 1
 
         if word[2] != '-':
             while True:
@@ -45,7 +42,7 @@ def main():
                     break
                 else:
                     print('Не верно!')
-                    wrong += 1
+                    mistakes += 1
 
         if word[3] != '-':
             while True:
@@ -55,15 +52,26 @@ def main():
                     break
                 else:
                     print('Не верно!')
-                    wrong += 1
+                    mistakes += 1
 
-    print(f'Количество ошибок: {wrong}')
+    print(f'Количество ошибок: {mistakes}')
+    return mistakes
 
-    if wrong == 0:
+def main():
+    all_mistakes = 0
+    print('Привет!')
+    tasks_count = int(input('Введи количество заданий: '))
+    
+    all_mistakes += testing(tasks_count)
+
+    print('Дополнительные задания:')
+
+    all_mistakes += testing(all_mistakes)
+
+    if all_mistakes == 0:
         print('Ты молодец!')
     else:
-        print('Ты балбес!')
-        print('Постарайся лучше в следующий раз!')
+        print(f'Ты балбес! Количество ошибок: {all_mistakes}\nПостарайся лучше в следующий раз!')
 
     print('Пока!')
 
