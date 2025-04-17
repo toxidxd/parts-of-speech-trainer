@@ -27,6 +27,7 @@ def testing(tasks_count):
 
         while True:
             ans = input('Какая часть речи? (сущ/прил/гл): ')
+            
             if ans == word[1]:
                 # print('Верно!')
                 break
@@ -74,6 +75,7 @@ def main():
         print(f'Ты балбес! Количество ошибок: {all_mistakes}\nПостарайся лучше в следующий раз!')
 
     print('Пока!')
+    input('Нажми Enter, чтобы выйти...')
 
 
 if __name__ == ('__main__'):
