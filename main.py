@@ -1,4 +1,5 @@
 import random
+import csv
 
 
 def get_words():
@@ -18,6 +19,7 @@ def gen_tasks_list(count):
 
     return [words_list[i_index] for i_index in indexes]
 
+
 def testing(tasks_count):
     mistakes = 0
     tasks = gen_tasks_list(tasks_count)
@@ -27,7 +29,7 @@ def testing(tasks_count):
 
         while True:
             ans = input('Какая часть речи? (сущ/прил/гл): ')
-            
+
             if ans == word[1]:
                 # print('Верно!')
                 break
@@ -58,11 +60,12 @@ def testing(tasks_count):
     print(f'Количество ошибок: {mistakes}')
     return mistakes
 
+
 def main():
     all_mistakes = 0
     print('Привет!')
     tasks_count = int(input('Введи количество заданий: '))
-    
+
     all_mistakes += testing(tasks_count)
 
     print('Дополнительные задания:')
@@ -72,7 +75,8 @@ def main():
     if all_mistakes == 0:
         print('Ты молодец!')
     else:
-        print(f'Ты балбес! Количество ошибок: {all_mistakes}\nПостарайся лучше в следующий раз!')
+        print(
+            f'Ты балбес! Количество ошибок: {all_mistakes}\nПостарайся лучше в следующий раз!')
 
     print('Пока!')
     input('Нажми Enter, чтобы выйти...')
