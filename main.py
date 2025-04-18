@@ -7,7 +7,6 @@ def get_words():
     with open('words.csv', newline='', encoding='utf-8') as csvfile:
         reader = csv.reader(csvfile, delimiter=',')
         for line in reader:
-            print(line)
             words_list.append(line)
 
     return words_list
@@ -76,8 +75,7 @@ def main():
         print(f'Дополнительные задания: {all_mistakes}')
         all_mistakes += testing(all_mistakes)
 
-        print(f'Ты балбес! Количество ошибок: {all_mistakes}\n\
-                Постарайся лучше в следующий раз!')
+        print(f'Ты балбес! Количество ошибок: {all_mistakes}.\nПостарайся лучше в следующий раз!')
 
     print('Пока!')
     input('Нажми Enter, чтобы выйти...')
