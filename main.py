@@ -4,11 +4,22 @@ import csv
 
 def get_words():
     words_list = []
-    with open('words.txt', mode='r', encoding='utf-8') as file:
-        for line in file:
-            words_list.append(line.strip().split(','))
+    with open('words.csv', newline='', encoding='utf-8') as csvfile:
+        reader = csv.reader(csvfile, delimiter=',')
+        for line in reader:
+            print(line)
+            words_list.append(line)
 
     return words_list
+
+
+# def get_words():
+#     words_list = []
+#     with open('words.txt', mode='r', encoding='utf-8') as file:
+#         for line in file:
+#             words_list.append(line.strip().split(','))
+
+#     return words_list
 
 
 def gen_tasks_list(count):
