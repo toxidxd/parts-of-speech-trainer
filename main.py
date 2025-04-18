@@ -13,15 +13,6 @@ def get_words():
     return words_list
 
 
-# def get_words():
-#     words_list = []
-#     with open('words.txt', mode='r', encoding='utf-8') as file:
-#         for line in file:
-#             words_list.append(line.strip().split(','))
-
-#     return words_list
-
-
 def gen_tasks_list(count):
     words_list = get_words()
     indexes = list(range(len(words_list)))
@@ -79,15 +70,14 @@ def main():
 
     all_mistakes += testing(tasks_count)
 
-    print('Дополнительные задания:')
-
-    all_mistakes += testing(all_mistakes)
-
     if all_mistakes == 0:
         print('Ты молодец!')
     else:
-        print(
-            f'Ты балбес! Количество ошибок: {all_mistakes}\nПостарайся лучше в следующий раз!')
+        print(f'Дополнительные задания: {all_mistakes}')
+        all_mistakes += testing(all_mistakes)
+
+        print(f'Ты балбес! Количество ошибок: {all_mistakes}\n\
+                Постарайся лучше в следующий раз!')
 
     print('Пока!')
     input('Нажми Enter, чтобы выйти...')
