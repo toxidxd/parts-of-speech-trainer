@@ -25,8 +25,8 @@ def testing(tasks_count):
     mistakes = 0
     tasks = gen_tasks_list(tasks_count)
 
-    for word in tasks:
-        print(word[0].upper())
+    for count, word in enumerate(tasks):
+        print(f'{count+1}) {word[0].upper()}')
 
         while True:
             ans = input('Какая часть речи? (сущ/прил/гл): ')
@@ -75,7 +75,8 @@ def main():
         print(f'Дополнительные задания: {all_mistakes}')
         all_mistakes += testing(all_mistakes)
 
-        print(f'Ты балбес! Количество ошибок: {all_mistakes}.\nПостарайся лучше в следующий раз!')
+        print(f'Ты балбес! Количество ошибок: {all_mistakes}.')
+        print('Постарайся лучше в следующий раз!')
 
     print('Пока!')
     input('Нажми Enter, чтобы выйти...')
