@@ -51,7 +51,7 @@ def testing(tasks_count):
                 if ans == word[2]:
                     # print('Верно!')
                     break
-                
+
                 elif ans not in ['м', 'ж', 'ср']:
                     print('Не верный ввод.')
                     continue
@@ -67,7 +67,7 @@ def testing(tasks_count):
                 if ans == word[3]:
                     # print('Верно!')
                     break
-                
+
                 elif ans not in ['ед', 'мн']:
                     print('Не верный ввод.')
                     continue
