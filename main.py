@@ -28,32 +28,50 @@ def testing(tasks_count):
     for count, word in enumerate(tasks):
         print(f'{count+1}) {word[0].upper()}')
 
+        print('Какая часть речи?')
         while True:
-            ans = input('Какая часть речи? (сущ/прил/гл): ')
+            ans = input('Введи сущ/прил/гл: ')
 
             if ans == word[1]:
                 # print('Верно!')
                 break
+
+            elif ans not in ['сущ', 'прил', 'гл']:
+                print('Не верный ввод.')
+                continue
+
             else:
                 print('Не верно!')
                 mistakes += 1
 
         if word[2] != '-':
+            print('Какой род?')
             while True:
-                ans = input('Какой род? (м/ж/ср): ')
+                ans = input('Введи м/ж/ср: ')
                 if ans == word[2]:
                     # print('Верно!')
                     break
+                
+                elif ans not in ['м', 'ж', 'ср']:
+                    print('Не верный ввод.')
+                    continue
+
                 else:
                     print('Не верно!')
                     mistakes += 1
 
         if word[3] != '-':
+            print('Какое число?')
             while True:
-                ans = input('Какое число? (ед/мн): ')
+                ans = input('Введи ед/мн: ')
                 if ans == word[3]:
                     # print('Верно!')
                     break
+                
+                elif ans not in ['ед', 'мн']:
+                    print('Не верный ввод.')
+                    continue
+
                 else:
                     print('Не верно!')
                     mistakes += 1
